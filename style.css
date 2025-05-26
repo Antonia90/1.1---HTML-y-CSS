@@ -28,7 +28,7 @@ footer {
 }
 
 .logo,
-.nav,
+div > nav,
 .social {
   background-color: rgb(214, 111, 111);
   width: 150px;
@@ -36,7 +36,7 @@ footer {
   padding: 1em;
 }
 
-.nav {
+div > nav {
   flex: 1;
   margin: 1em 0;
 }
@@ -74,7 +74,7 @@ aside {
   padding: 2em;
 }
 article,
-nav {
+section > nav {
   align-content: center;
   margin: 1em;
   padding: 1em;
@@ -82,7 +82,7 @@ nav {
 article {
   background-color: rgb(73, 123, 230);
 }
-nav {
+section > nav {
   background-color: aquamarine;
   grid-column: span 2;
 }
@@ -103,7 +103,7 @@ footer > div {
     flex-direction: column;
   }
   .logo,
-  .nav,
+  div > nav,
   .social {
     margin: 15px;
     width: 95%;
