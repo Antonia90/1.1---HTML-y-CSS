@@ -81,14 +81,6 @@ footer {
   width: 2em;
   height: auto;
 }
-.menu-toggle {
-  display: none;
-  font-size: 2em;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-}
 
 .social {
   display: flex;
@@ -220,24 +212,21 @@ footer div {
 }
 
 @media only screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .social a {
-    display: none;
-  }
-
-  .main-nav ul {
-    display: none;
+  .top-bar {
+    display: flex;
     flex-direction: column;
-    gap: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    position: absolute;
-    top: 60px;
-    left: 0;
+    height: 200px;
+  }
+  .logo,
+  .main-nav,
+  .social {
     width: 100%;
-    padding: 1em;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  }
+  .social {
+    justify-content: end;
   }
 
   .main-nav ul.active {
@@ -255,10 +244,10 @@ footer div {
     width: 100%;
     padding: 5px;
   }
-aside{
-  width: 100%;
-  margin: 0;
-}
+  aside {
+    width: 100%;
+    margin: 0;
+  }
   article {
     max-width: 300px;
     max-height: 700px;
@@ -279,5 +268,7 @@ aside{
     max-width: 400px;
     min-width: 200px;
   }
-
+  .main-nav li p {
+    display: none;
+  }
 }
