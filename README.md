@@ -18,6 +18,14 @@ El objetivo es **sustituir los cuadrantes originales** por una nueva cabecera qu
 
 El resultado debe inspirarse en el diseño de una **web de turismo en Japón**, cuidando tanto la **estética** como la **jerarquía visual**.
 
+### 🔹 Nivel 3
+
+- Ejercicio 6
+Para mejorar la experiencia de usuario, aplica sobre los elementos principales de la web, título y logo, una animación usando keyframes.
+
+- Ejercicio 7
+El objetivo de este trabajo es que utilices las propiedades de grid layout para realizar toda la estructura de la web y sus diferentes dispositivos (siempre con Media Query).
+
 ---
 
 ## 🛠️ Tecnologías utilizadas
