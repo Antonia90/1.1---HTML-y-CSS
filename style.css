@@ -5,6 +5,13 @@
 }
 
 body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
@@ -12,11 +19,23 @@ body {
   background-color: whitesmoke;
 }
 
-header,
-main,
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "section aside";
+  gap: 1em;
+}
+
 footer {
+  grid-area: footer;
   margin-bottom: 1rem;
 }
+
 .site-header {
   background-image: url("images/header.jpg");
   background-size: cover;
@@ -28,7 +47,8 @@ footer {
 }
 
 .top-bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
@@ -38,7 +58,9 @@ footer {
 .logo img {
   width: 80px;
   height: auto;
+  animation: fadeInLogo 1.5s ease-out;
 }
+
 .logo,
 .main-nav,
 .social {
@@ -102,7 +124,9 @@ footer {
   display: flex;
   text-align: center;
   justify-content: center;
-}
+  opacity: 0;
+  animation: fadeInBanner 1s ease-in forwards;
+  }
 
 main {
   display: flex;
@@ -113,6 +137,7 @@ main {
 }
 
 section {
+  grid-area: section;
   background-color: rgb(205, 200, 200);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -129,6 +154,7 @@ section {
 }
 
 aside {
+  grid-area: aside;
   background-color: rgb(205, 200, 200);
   width: 250px;
   margin: 0 0 0 1em;
@@ -142,12 +168,13 @@ section > nav {
 }
 article {
   background-color: rgb(215, 216, 218);
-  width: 100%;
-  max-width: 425px;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 1em;
+  gap: 0.5em;
   min-height: 300px;
+  max-width: 425px;
+  width: 100%;
 }
 article a {
   text-decoration: none;
@@ -210,9 +237,31 @@ footer div {
   padding: 10px;
   text-align: center;
 }
+@keyframes fadeInBanner {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInLogo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .top-bar {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+    gap: 1em;
     display: flex;
     flex-direction: column;
     height: 200px;
@@ -238,9 +287,14 @@ footer div {
   }
 
   main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "section"
+      "aside";
     flex-direction: column;
   }
   section {
+    grid-template-columns: 1fr;
     width: 100%;
     padding: 5px;
   }
